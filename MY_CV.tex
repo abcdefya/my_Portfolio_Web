@@ -1,0 +1,252 @@
+\documentclass[10pt, letterpaper]{article}
+% Packages: (unchanged from previous)
+\usepackage[
+    ignoreheadfoot,
+    top=2 cm,
+    bottom=2 cm,
+    left=2 cm,
+    right=2 cm,
+    footskip=1.0 cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 0, 0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Do The Anh's CV},
+    pdfauthor={Do The Anh},
+    pdfcreator={LaTeX with RenderCV},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[T1]{fontenc}
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+\usepackage{charter}
+\raggedright
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.15cm}
+\pagenumbering{gobble}
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+\renewcommand\labelitemi{$\vcenter{\hbox{\small$\bullet$}}$}
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=0 cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+\newenvironment{highlightsforbulletentries}{
+    \begin{itemize}[
+        topsep=0.10 cm,
+        parsep=0.10 cm,
+        partopsep=0pt,
+        itemsep=0pt,
+        leftmargin=10pt
+    ]
+}{
+    \end{itemize}
+}
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0 cm + 0.00001 cm}{0 cm + 0.00001 cm}
+}{
+    \end{adjustwidth}
+}
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+\newenvironment{threecolentry}[3][]{
+    \onecolentry
+    \def\thirdColumn{#3}
+    \setcolumnwidth{, \fill, 4.5 cm}
+    \begin{paracol}{3}
+    {\raggedright #2} \switchcolumn
+}{
+    \switchcolumn \raggedleft \thirdColumn
+    \end{paracol}
+    \endonecolentry
+}
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.5}
+}{
+    \par\kern\topsep
+}
+\newcommand{\placelastupdatedtext}{%
+  \AddToShipoutPictureFG*{%
+    \put(
+        \LenToUnit{\paperwidth-2 cm-0 cm+0.05cm},
+        \LenToUnit{\paperheight-1.0 cm}
+    ){\vtop{{\null}\makebox[0pt][c]{
+        \small\color{gray}\textit{Last updated on January 17, 2026}\hspace{\widthof{Last updated on January 17, 2026}}
+    }}}%
+  }%
+}
+\let\hrefWithoutArrow\href
+\begin{document}
+    \newcommand{\AND}{\unskip
+        \cleaders\copy\ANDbox\hskip\wd\ANDbox
+        \ignorespaces
+    }
+    \newsavebox\ANDbox
+    \sbox\ANDbox{$|$}
+    \placelastupdatedtext
+    \begin{header}
+        \fontsize{25 pt}{25 pt}\selectfont Do The Anh
+        \vspace{5 pt}
+        \normalsize
+        \\ Tay Mo, Nam Tu Liem, Hanoi, Vietnam%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{mailto:anh.dothe47@gmail.com}{anh.dothe47@gmail.com}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{tel:0338272747}{0338272747}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/do-the-anh-090737286}{linkedin.com/in/do-the-anh-090737286}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://github.com/abcdefya}{github.com/abcdefya}}%
+    \end{header}
+    \vspace{5 pt - 0.3 cm}
+    \section{Professional Summary}
+        \begin{onecolentry}
+Entry-level AI/ML Engineer with practical experience from NTQ Solution internship, excelling in computer vision (OpenCV, YOLOv8) and MLOps (Airflow, Kafka, GKE). Developed OCR and RAG solutions, achieving >98\% detection confidence in automated systems and optimizing models for real-time processing. Proficient in PyTorch, TensorFlow, and AWS/GCP; passionate about contributing to innovative AI projects with strong problem-solving and adaptability.
+        \end{onecolentry}
+    \section{Professional Experience}
+        \begin{twocolentry}{Sep 2025 – Dec 2025}
+            \textbf{AI Engineer Intern} \\ \textit{NTQ Solution -- Hanoi, Vietnam}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Analyzed exam sheet image dataset for Anjo City (Aichi, Japan) using Python, Matplotlib, and Seaborn; generated visualizations of dimensions, aspect ratios, and content imbalances to inform targeted data enhancement strategies.
+                \item Engineered OpenCV-based preprocessing pipeline to remove fixed mid-center baselines, enabling accurate insertion of unique Hiragana circular answer tables for Japanese educational documents.
+                \item Implemented advanced data augmentation with Albumentations (rotation, contrast, Gaussian blur) to create diverse layouts blending standard and special tables, significantly boosting dataset variety and model robustness.
+                \item Fine-tuned YOLOv8 for multi-table object detection on augmented data, achieving confidence scores >0.98 (standard tables) and 0.97–0.99 (complex Hiragana tables) even under augmentation challenges, directly enhancing automatic grading system accuracy.
+            \end{highlights}
+        \end{onecolentry}
+    \section{Key Projects}
+        \begin{twocolentry}{2024 – 2025 (Graduation Project)}
+            \textbf{Binance Merchant Trading Flow}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Developed a production-grade, cloud-native data engineering platform for processing Binance C2C (Customer-to-Customer) merchant trading data at scale, integrating batch and streaming pipelines for historical analysis and real-time event processing.
+                \item Implemented medallion architecture (Bronze → Silver → Gold layers) using Apache Spark for ETL transformations, with data ingestion from Binance API to MinIO/S3 (Bronze), cleaned/enriched in Silver, and aggregated in Google Cloud Storage (Gold) for analytics in BigQuery and Looker dashboards.
+                \item Built real-time streaming pipeline with PostgreSQL CDC via Debezium to Kafka, processed by Apache Flink for transformations and aggregations, enabling instant Telegram alerts for critical trading events.
+                \item Deployed on Google Kubernetes Engine (GKE) with Terraform for Infrastructure as Code, Helm charts for service management, and Jenkins CI/CD pipelines for automated builds and deployments to Google Artifact Registry.
+                \item Incorporated comprehensive observability with ELK Stack for logging, Prometheus + Grafana for monitoring, and auto-scaling features for reliability and performance; managed costs effectively with detailed GCP usage breakdowns.
+                \item GitHub: \hrefWithoutArrow{https://github.com/abcdefya/binance-merchant-trade-flow}{https://github.com/abcdefya/binance-merchant-trade-flow}
+            \end{highlights}
+        \end{onecolentry}
+        \vspace{0.2 cm}
+        \begin{twocolentry}{Sep 2024 – Dec 2024}
+            \textbf{Chest Cancer Classification}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Constructed a VGG16-based CNN with transfer learning in TensorFlow/Keras, achieving 92\% accuracy and 90\% F1-score for adenocarcinoma classification from chest CT scans; incorporated data augmentation to improve generalization.
+                \item Deployed as a full-stack web application using Flask backend, Docker for containerization, and CI/CD pipelines with GitHub Actions and AWS EC2 for automated updates and scalability.
+                \item GitHub: \hrefWithoutArrow{https://github.com/abcdefya/Chest-Cancer-Classification}{github.com/abcdefya/Chest-Cancer-Classification}
+            \end{highlights}
+        \end{onecolentry}
+        \vspace{0.2 cm}
+        \begin{twocolentry}{Sep 2024 – Dec 2024}
+            \textbf{RAG - Coding Assistant Chatbot}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Built an LLM-powered chatbot with RAG architecture using LangChain, OpenAI APIs, Neo4j, and Qdrant, elevating response accuracy for multi-language code queries by 15\% through dynamic vector embeddings.
+                \item Overcame retrieval challenges by fine-tuning chunking strategies and hybrid search, enabling support for Python, JavaScript, and C++ debugging.
+            \end{highlights}
+        \end{onecolentry}
+    \section{Education}
+        \begin{twocolentry}{2021 – Expected 2025}
+            \textbf{Hanoi University of Science and Technology} \\ \textit{Bachelor of Science in Mathematics and Informatics - CPA: 2.77}
+        \end{twocolentry}
+        \vspace{0.10 cm}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item Relevant Coursework: Linear Algebra, Probability and Statistics, Optimization, Data Structures and Algorithms, Machine Learning, 
+            \end{highlights}
+        \end{onecolentry}
+    \section{Skills}
+        \begin{onecolentry}
+            \textbf{Programming Languages:} Python, C++, JavaScript/TypeScript, HTML/CSS, SQL
+        \end{onecolentry}
+        \vspace{0.2 cm}
+        \begin{onecolentry}
+            \textbf{AI/ML Frameworks:} PyTorch, TensorFlow/Keras, Scikit-learn, LangChain, LangGraph, Hugging Face Transformers, Ultralytics YOLO
+        \end{onecolentry}
+        \vspace{0.2 cm}
+        \begin{onecolentry}
+            \textbf{Data Engineering \& Big Data:} Apache Airflow, Apache Spark, Apache Flink, Apache Kafka, Debezium CDC
+        \end{onecolentry}
+        \vspace{0.2 cm}
+        \begin{onecolentry}
+            \textbf{Computer Vision \& OCR:} OpenCV, Pytesseract, YOLO, Image Preprocessing, MediaPipe
+        \end{onecolentry}
+        \vspace{0.2 cm}
+        \begin{onecolentry}
+            \textbf{Cloud \& DevOps/MLOps:} GCP (GKE, GCS, Artifact Registry), AWS (EC2, S3), Docker, Kubernetes, Terraform (IaC), Jenkins, Git/GitHub, CI/CD Pipelines, Prometheus/Grafana/ELK
+        \end{onecolentry}
+        \vspace{0.2 cm}
+        \begin{onecolentry}
+            \textbf{Data Analysis Tools:} Pandas, NumPy, Matplotlib/Seaborn, Looker Studio, Power BI
+        \end{onecolentry}
+        \vspace{0.2 cm}
+        \begin{onecolentry}
+            \textbf{Soft Skills:} Problem-Solving, Teamwork (collaborated in internship), Communication (technical documentation), Adaptability, Self-Learning, Research and Exploration
+        \end{onecolentry}
+    \section{Certifications \& Achievements}
+        \begin{onecolentry}
+            \begin{highlights}
+                \item TOEIC: 750 (Advanced English for technical communication and collaboration)
+            \end{highlights}
+        \end{onecolentry}
+    \section{Languages}
+        \begin{onecolentry}
+            Vietnamese: Native \\ English: Advanced (TOEIC: 750; Proficient in technical documentation, presentations, and team communication)
+        \end{onecolentry}
+\end{document}
