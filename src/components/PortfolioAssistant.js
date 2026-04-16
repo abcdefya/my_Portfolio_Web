@@ -45,7 +45,7 @@ export const PortfolioAssistant = ({ language }) => {
   const t = content[language];
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([{ role: "assistant", text: t.welcome }]);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [orbMessageIndex, setOrbMessageIndex] = useState(0);
   const orbCycleDurationMs = useMemo(() => {
     const longestMessageLength = t.orbMessages.reduce(
@@ -225,11 +225,7 @@ export const PortfolioAssistant = ({ language }) => {
           aria-label={t.expand}
           onClick={() => setIsCollapsed(false)}
         >
-          <span className="assistant-orb-face">
-            <span className="assistant-orb-eye"></span>
-            <span className="assistant-orb-eye"></span>
-            <span className="assistant-orb-smile"></span>
-          </span>
+          <img className="assistant-orb-logo" src={`${process.env.PUBLIC_URL}/assistant-logo.svg`} alt="Portfolio logo" />
         </button>
       </aside>
     );
