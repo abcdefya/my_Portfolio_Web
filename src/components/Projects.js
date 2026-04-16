@@ -14,24 +14,29 @@ export const Projects = ({ language }) => {
       title: "Featured Projects",
       description: "Selected work from graduation and research-driven software projects.",
       tabs: ["Main Projects", "Experience", "Education"],
+      repoLabel: "View Repository",
+      liveLabel: "Live Demo",
       projects: [
         {
           title: "Binance Merchant Trading Flow",
           description: "Cloud-native data platform with Spark, Flink, Kafka, GKE, and Terraform.",
           imgUrl: projImg1,
-          projectUrl: "https://github.com/abcdefya/binance-merchant-trade-flow"
+          projectUrl: "https://github.com/abcdefya/binance-merchant-trade-flow",
+          liveUrl: "https://github.com/abcdefya/binance-merchant-trade-flow"
         },
         {
           title: "Chest Cancer Classification",
           description: "VGG16 transfer learning pipeline deployed with Flask, Docker, and AWS EC2.",
           imgUrl: projImg2,
-          projectUrl: "https://github.com/abcdefya/Chest-Cancer-Classification"
+          projectUrl: "https://github.com/abcdefya/Chest-Cancer-Classification",
+          liveUrl: "https://github.com/abcdefya/Chest-Cancer-Classification"
         },
         {
           title: "RAG Coding Assistant Chatbot",
           description: "LangChain + OpenAI + Neo4j + Qdrant assistant for multi-language coding support.",
           imgUrl: projImg3,
-          projectUrl: "https://github.com/abcdefya"
+          projectUrl: "https://github.com/abcdefya",
+          liveUrl: "https://github.com/abcdefya"
         }
       ],
       experience: "AI Engineer Intern at NTQ Solution (Sep 2025 - Dec 2025): focused on OCR and exam-sheet automation with OpenCV and YOLOv8, achieving >98% confidence on key table detection tasks.",
@@ -41,24 +46,29 @@ export const Projects = ({ language }) => {
       title: "Dự Án Nổi Bật",
       description: "Một số dự án tiêu biểu từ đồ án tốt nghiệp và các bài toán phần mềm hướng nghiên cứu.",
       tabs: ["Dự Án Chính", "Kinh Nghiệm", "Học Vấn"],
+      repoLabel: "Xem Repository",
+      liveLabel: "Xem Sản Phẩm",
       projects: [
         {
           title: "Binance Merchant Trading Flow",
           description: "Nền tảng dữ liệu cloud-native sử dụng Spark, Flink, Kafka, GKE và Terraform.",
           imgUrl: projImg1,
-          projectUrl: "https://github.com/abcdefya/binance-merchant-trade-flow"
+          projectUrl: "https://github.com/abcdefya/binance-merchant-trade-flow",
+          liveUrl: "https://github.com/abcdefya/binance-merchant-trade-flow"
         },
         {
           title: "Chest Cancer Classification",
           description: "Mô hình VGG16 transfer learning triển khai với Flask, Docker và AWS EC2.",
           imgUrl: projImg2,
-          projectUrl: "https://github.com/abcdefya/Chest-Cancer-Classification"
+          projectUrl: "https://github.com/abcdefya/Chest-Cancer-Classification",
+          liveUrl: "https://github.com/abcdefya/Chest-Cancer-Classification"
         },
         {
           title: "RAG Coding Assistant Chatbot",
           description: "Trợ lý mã nguồn đa ngôn ngữ sử dụng LangChain + OpenAI + Neo4j + Qdrant.",
           imgUrl: projImg3,
-          projectUrl: "https://github.com/abcdefya"
+          projectUrl: "https://github.com/abcdefya",
+          liveUrl: "https://github.com/abcdefya"
         }
       ],
       experience: "Thực tập sinh AI Engineer tại NTQ Solution (09/2025 - 12/2025): tập trung vào OCR và tự động chấm bài bằng OpenCV và YOLOv8, đạt độ tin cậy >98% cho các bảng câu hỏi quan trọng.",
@@ -100,6 +110,8 @@ export const Projects = ({ language }) => {
                               <ProjectCard
                                 key={index}
                                 {...project}
+                                repoLabel={t.repoLabel}
+                                liveLabel={t.liveLabel}
                                 />
                             )
                           })

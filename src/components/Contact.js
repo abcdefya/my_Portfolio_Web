@@ -14,6 +14,7 @@ export const Contact = ({ language }) => {
   }
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState(language === "vi" ? "Gửi" : "Send");
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState({});
 
   const content = {
@@ -58,6 +59,7 @@ export const Contact = ({ language }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     setButtonText(t.sending);
     const defaultApiBaseUrl = process.env.NODE_ENV === "development" ? "http://localhost:5000" : "/api";
     const apiBaseUrl = process.env.REACT_APP_API_BASE_URL || defaultApiBaseUrl;
@@ -79,6 +81,7 @@ export const Contact = ({ language }) => {
     } catch (error) {
       setStatus({ success: false, message: t.failed });
     } finally {
+      setIsSubmitting(false);
       setButtonText(t.send);
     }
   };
@@ -102,20 +105,20 @@ export const Contact = ({ language }) => {
                 <form onSubmit={handleSubmit}>
                   <Row>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.firstName} placeholder={t.firstName} onChange={(e) => onFormUpdate('firstName', e.target.value)} />
+                      <input type="text" value={formDetails.firstName} placeholder={t.firstName} onChange={(e) => onFormUpdate('firstName', e.target.value)} aria-label={t.firstName} required />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="text" value={formDetails.lastName} placeholder={t.lastName} onChange={(e) => onFormUpdate('lastName', e.target.value)}/>
+                      <input type="text" value={formDetails.lastName} placeholder={t.lastName} onChange={(e) => onFormUpdate('lastName', e.target.value)} aria-label={t.lastName} required />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="email" value={formDetails.email} placeholder={t.email} onChange={(e) => onFormUpdate('email', e.target.value)} />
+                      <input type="email" value={formDetails.email} placeholder={t.email} onChange={(e) => onFormUpdate('email', e.target.value)} aria-label={t.email} required />
                     </Col>
                     <Col size={12} sm={6} className="px-1">
-                      <input type="tel" value={formDetails.phone} placeholder={t.phone} onChange={(e) => onFormUpdate('phone', e.target.value)}/>
+                      <input type="tel" value={formDetails.phone} placeholder={t.phone} onChange={(e) => onFormUpdate('phone', e.target.value)} aria-label={t.phone} required />
                     </Col>
                     <Col size={12} className="px-1">
-                      <textarea rows="6" value={formDetails.message} placeholder={t.message} onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
-                      <button type="submit"><span>{buttonText}</span></button>
+                      <textarea rows="6" value={formDetails.message} placeholder={t.message} onChange={(e) => onFormUpdate('message', e.target.value)} aria-label={t.message} required></textarea>
+                      <button type="submit" disabled={isSubmitting}><span>{buttonText}</span></button>
                     </Col>
                     {
                       status.message &&
