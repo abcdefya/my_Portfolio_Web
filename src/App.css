@@ -751,6 +751,14 @@ nav.navbar a.navbar-brand {
   width: 52px;
 }
 
+nav.navbar a.navbar-brand .site-logo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-size: 16px;
   letter-spacing: 0.2px;
@@ -1113,6 +1121,13 @@ p.danger {
 
 .footer img {
   width: 120px;
+}
+
+.footer .site-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 @media (max-width: 992px) {

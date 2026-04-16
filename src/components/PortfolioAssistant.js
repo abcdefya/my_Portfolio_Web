@@ -225,7 +225,7 @@ export const PortfolioAssistant = ({ language }) => {
           aria-label={t.expand}
           onClick={() => setIsCollapsed(false)}
         >
-          <img className="assistant-orb-logo" src={`${process.env.PUBLIC_URL}/assistant-logo.svg`} alt="Portfolio logo" />
+          <img className="assistant-orb-logo" src={`${process.env.PUBLIC_URL}/assistant-logo.PNG`} alt="Portfolio logo" />
         </button>
       </aside>
     );
