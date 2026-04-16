@@ -81,7 +81,7 @@ export const PortfolioAssistant = ({ language }) => {
         "--bubble-alpha": alpha.toFixed(2),
       };
     })
-  ), [language, orbMessageIndex]);
+  ), []);
   const orbFrameProfile = useMemo(() => {
     const riseIntensity = 1 + Math.random() * 0.52;
     const startScale = 0.22 + Math.random() * 0.08;
@@ -125,7 +125,7 @@ export const PortfolioAssistant = ({ language }) => {
       "--msg-squeeze-x": squeezeScaleX.toFixed(2),
       "--msg-squeeze-y": squeezeScaleY.toFixed(2),
     };
-  }, [language, orbMessageIndex]);
+  }, []);
 
   useEffect(() => {
     setMessages((currentMessages) => {

@@ -34,6 +34,14 @@ export const Banner = ({ language }) => {
   const toRotate = t.rotate;
   const period = 1200;
 
+  const scrollToSection = (sectionId) => {
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      window.history.replaceState(null, "", `#${sectionId}`);
+    }
+  };
+
   useEffect(() => {
     const tick = () => {
       const i = loopNum % toRotate.length;
@@ -66,7 +74,7 @@ export const Banner = ({ language }) => {
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="aligh-items-center">
+        <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
@@ -75,8 +83,8 @@ export const Banner = ({ language }) => {
                 <h1>{t.title} <span className="txt-rotate" dataPeriod="1000"><span className="wrap">{text}</span></span></h1>
                 <p>{t.summary}</p>
                 <div className="hero-actions">
-                  <button className="hero-btn hero-btn-primary" onClick={() => { window.location.hash = "#connect"; }}>{t.connect} <ArrowRightCircle size={25} /></button>
-                  <button className="hero-btn hero-btn-secondary" onClick={() => { window.location.hash = "#projects"; }}>{t.projects}</button>
+                  <button type="button" className="hero-btn hero-btn-primary" onClick={() => scrollToSection("connect")}>{t.connect} <ArrowRightCircle size={25} /></button>
+                  <button type="button" className="hero-btn hero-btn-secondary" onClick={() => scrollToSection("projects")}>{t.projects}</button>
                 </div>
                 <ul className="hero-stats">
                   {t.stats.map((item) => (
@@ -90,7 +98,7 @@ export const Banner = ({ language }) => {
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
-                  <img src={headerImg} alt="Header Img"/>
+                  <img src={headerImg} alt="Portrait illustration"/>
                 </div>}
             </TrackVisibility>
           </Col>

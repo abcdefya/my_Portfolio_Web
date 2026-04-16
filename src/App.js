@@ -11,14 +11,18 @@ import { PortfolioAssistant } from "./components/PortfolioAssistant";
 
 function App() {
   const [language, setLanguage] = useState("en");
+  const skipToMain = language === "vi" ? "Bỏ qua đến nội dung chính" : "Skip to main content";
 
   return (
     <div className="App">
+      <a className="skip-link" href="#main-content">{skipToMain}</a>
       <NavBar language={language} setLanguage={setLanguage} />
-      <Banner language={language} />
-      <Skills language={language} />
-      <Projects language={language} />
-      <Contact language={language} />
+      <main id="main-content">
+        <Banner language={language} />
+        <Skills language={language} />
+        <Projects language={language} />
+        <Contact language={language} />
+      </main>
       <Footer language={language} />
       <PortfolioAssistant language={language} />
     </div>
