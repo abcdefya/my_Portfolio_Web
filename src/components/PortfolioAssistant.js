@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 export const PortfolioAssistant = ({ language }) => {
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
@@ -46,6 +46,8 @@ export const PortfolioAssistant = ({ language }) => {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([{ role: "assistant", text: t.welcome }]);
   const [isCollapsed, setIsCollapsed] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const sessionId = useRef(Math.random().toString(36).slice(2));
   const [orbMessageIndex, setOrbMessageIndex] = useState(0);
   const orbCycleDurationMs = useMemo(() => {
     const longestMessageLength = t.orbMessages.reduce(
@@ -155,24 +157,76 @@ export const PortfolioAssistant = ({ language }) => {
     return () => clearInterval(intervalId);
   }, [isCollapsed, orbCycleDurationMs, t.orbMessages]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     const trimmedInput = input.trim();
     if (!trimmedInput) {
-      setMessages((currentMessages) => [
-        ...currentMessages,
-        { role: "assistant", text: t.empty },
-      ]);
+      setMessages((prev) => [...prev, { role: "assistant", text: t.empty }]);
       return;
     }
 
-    setMessages((currentMessages) => [
-      ...currentMessages,
+    setMessages((prev) => [
+      ...prev,
       { role: "user", text: trimmedInput },
-      { role: "assistant", text: t.response },
+      { role: "assistant", text: "" },
     ]);
     setInput("");
+    setIsLoading(true);
+
+    const apiUrl = process.env.REACT_APP_SERENA_API_URL;
+
+    try {
+      const response = await fetch(`${apiUrl}/chat`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ session_id: sessionId.current, message: trimmedInput }),
+      });
+
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop();
+
+        for (const line of lines) {
+          if (!line.startsWith("data: ")) continue;
+          const data = JSON.parse(line.slice(6));
+          if (data.done) break;
+          if (data.token) {
+            setMessages((prev) => {
+              const updated = [...prev];
+              updated[updated.length - 1] = {
+                role: "assistant",
+                text: updated[updated.length - 1].text + data.token,
+              };
+              return updated;
+            });
+          }
+        }
+      }
+    } catch {
+      setMessages((prev) => {
+        const updated = [...prev];
+        updated[updated.length - 1] = {
+          role: "assistant",
+          text: language === "vi"
+            ? "Đã có lỗi xảy ra. Vui lòng thử lại."
+            : "Something went wrong. Please try again.",
+        };
+        return updated;
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isCollapsed) {
@@ -265,8 +319,9 @@ export const PortfolioAssistant = ({ language }) => {
           onChange={(event) => setInput(event.target.value)}
           placeholder={t.placeholder}
           aria-label={t.placeholder}
+          disabled={isLoading}
         />
-        <button type="submit">{t.send}</button>
+        <button type="submit" disabled={isLoading}>{t.send}</button>
       </form>
     </aside>
   );
