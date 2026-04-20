@@ -1243,8 +1243,27 @@ p.danger {
   padding-right: 4px;
 }
 
+.assistant-bubble-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.assistant-bubble-row-user {
+  flex-direction: row-reverse;
+}
+
+.assistant-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-bottom: 2px;
+}
+
 .assistant-bubble {
-  max-width: 88%;
+  max-width: 78%;
   padding: 10px 12px;
   border-radius: 14px;
   font-size: 0.92rem;
@@ -1252,13 +1271,11 @@ p.danger {
 }
 
 .assistant-bubble-ai {
-  align-self: flex-start;
   background: rgba(56, 189, 248, 0.14);
   color: var(--text-primary);
 }
 
 .assistant-bubble-user {
-  align-self: flex-end;
   background: linear-gradient(90deg, rgba(14, 165, 233, 0.28), rgba(20, 184, 166, 0.24));
   color: #fff;
 }

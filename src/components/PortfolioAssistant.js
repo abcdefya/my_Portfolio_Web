@@ -48,6 +48,7 @@ export const PortfolioAssistant = ({ language }) => {
   const [isCollapsed, setIsCollapsed] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const sessionId = useRef(Math.random().toString(36).slice(2));
+  const messagesEndRef = useRef(null);
   const [orbMessageIndex, setOrbMessageIndex] = useState(0);
   const orbCycleDurationMs = useMemo(() => {
     const longestMessageLength = t.orbMessages.reduce(
@@ -157,6 +158,10 @@ export const PortfolioAssistant = ({ language }) => {
     return () => clearInterval(intervalId);
   }, [isCollapsed, orbCycleDurationMs, t.orbMessages]);
 
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -213,7 +218,8 @@ export const PortfolioAssistant = ({ language }) => {
           }
         }
       }
-    } catch {
+    } catch (err) {
+      console.error("[Sirena] chat error:", err);
       setMessages((prev) => {
         const updated = [...prev];
         updated[updated.length - 1] = {
@@ -306,11 +312,21 @@ export const PortfolioAssistant = ({ language }) => {
         {messages.map((message, index) => (
           <div
             key={`${message.role}-${index}`}
-            className={message.role === "assistant" ? "assistant-bubble assistant-bubble-ai" : "assistant-bubble assistant-bubble-user"}
+            className={message.role === "assistant" ? "assistant-bubble-row assistant-bubble-row-ai" : "assistant-bubble-row assistant-bubble-row-user"}
           >
-            {message.text}
+            {message.role === "assistant" && (
+              <img
+                src={`${process.env.PUBLIC_URL}/assistant-logo.PNG`}
+                alt="Sirena"
+                className="assistant-avatar"
+              />
+            )}
+            <div className={message.role === "assistant" ? "assistant-bubble assistant-bubble-ai" : "assistant-bubble assistant-bubble-user"}>
+              {message.text}
+            </div>
           </div>
         ))}
+        <div ref={messagesEndRef} />
       </div>
       <form className="assistant-form" onSubmit={handleSubmit}>
         <input
