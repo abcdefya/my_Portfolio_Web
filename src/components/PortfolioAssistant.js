@@ -7,38 +7,38 @@ export const PortfolioAssistant = ({ language }) => {
     en: {
       badge: "Portfolio Assistant",
       title: "Ask about The Anh",
-      subtitle: "Try asking about background, skills, or projects.",
+      subtitle: "Ask about his background, skills, experience, or projects.",
       collapse: "Minimize assistant",
       expand: "Open assistant",
       orbLabel: "Portfolio assistant orb",
       orbMessages: [
-        "I am your portfolio assistant.",
-        "Ask me about The Anh anytime.",
-        "I'm always here if you need me."
+        "Ask me about The Anh's AI work.",
+        "I can summarize his projects.",
+        "Need a quick skills overview?"
       ],
       placeholder: "Ask a question...",
       send: "Send",
       empty: "Please enter a question first.",
       response: "I am The Anh's portfolio assistant.",
-      welcome: "I can answer basic questions about The Anh and his projects."
+      welcome: "I can answer basic questions about The Anh, his AI engineering experience, skills, and projects."
     },
     vi: {
       badge: "Trợ Lý Portfolio",
       title: "Hỏi về Thế Anh",
-      subtitle: "Bạn có thể hỏi về bản thân, kỹ năng hoặc dự án.",
+      subtitle: "Bạn có thể hỏi về nền tảng, kỹ năng, kinh nghiệm hoặc dự án.",
       collapse: "Thu gọn trợ lý",
       expand: "Mở trợ lý",
       orbLabel: "Biểu tượng trợ lý portfolio",
       orbMessages: [
-        "Tôi là trợ lý portfolio đây.",
-        "Bạn có thể hỏi về Thế Anh bất cứ lúc nào.",
-        "Tôi luôn ở đây nếu bạn cần."
+        "Hỏi mình về công việc AI của Thế Anh.",
+        "Mình có thể tóm tắt các dự án.",
+        "Bạn cần xem nhanh kỹ năng?"
       ],
       placeholder: "Nhập câu hỏi...",
       send: "Gửi",
       empty: "Vui lòng nhập câu hỏi trước.",
       response: "Tôi là trợ lý portfolio của Thế Anh.",
-      welcome: "Tôi có thể trả lời các câu hỏi cơ bản về Thế Anh và các dự án của anh ấy."
+      welcome: "Tôi có thể trả lời các câu hỏi cơ bản về Thế Anh, kinh nghiệm AI engineering, kỹ năng và dự án của anh ấy."
     }
   }), []);
 
