@@ -12,67 +12,67 @@ export const Projects = ({ language }) => {
   const content = {
     en: {
       title: "Featured Projects",
-      description: "Selected work from graduation and research-driven software projects.",
+      description: "Selected AI, RAG, and cloud-native data projects from my latest CV.",
       tabs: ["Main Projects", "Experience", "Education"],
       repoLabel: "View Repository",
-      liveLabel: "Live Demo",
+      liveLabel: "Open Link",
       projects: [
         {
-          title: "Binance Merchant Trading Flow",
-          description: "Cloud-native data platform with Spark, Flink, Kafka, GKE, and Terraform.",
+          title: "AI English Speaking Coach",
+          description: "Real-time AI tutoring coach with Groq STT, LangGraph, ElevenLabs TTS, Azure speech assessment, FastAPI, PostgreSQL, Redis, MinIO, Elasticsearch, Docker, and GKE.",
           imgUrl: projImg1,
-          projectUrl: "https://github.com/abcdefya/binance-merchant-trade-flow",
-          liveUrl: "https://github.com/abcdefya/binance-merchant-trade-flow"
-        },
-        {
-          title: "Chest Cancer Classification",
-          description: "VGG16 transfer learning pipeline deployed with Flask, Docker, and AWS EC2.",
-          imgUrl: projImg2,
-          projectUrl: "https://github.com/abcdefya/Chest-Cancer-Classification",
-          liveUrl: "https://github.com/abcdefya/Chest-Cancer-Classification"
+          projectUrl: "https://github.com/abcdefya/LinguAI",
+          liveUrl: "https://github.com/abcdefya/LinguAI"
         },
         {
           title: "RAG Coding Assistant Chatbot",
-          description: "LangChain + OpenAI + Neo4j + Qdrant assistant for multi-language coding support.",
-          imgUrl: projImg3,
+          description: "Production-ready coding assistant using LangChain, OpenAI API, Neo4j, Qdrant, Ollama, hybrid retrieval, and multilingual debugging support.",
+          imgUrl: projImg2,
           projectUrl: "https://github.com/abcdefya",
           liveUrl: "https://github.com/abcdefya"
+        },
+        {
+          title: "Binance Merchant Trading Flow",
+          description: "Cloud-native Binance C2C merchant data platform with Spark ETL, PostgreSQL CDC, Debezium, Kafka, Flink, GKE, Terraform, Helm, Jenkins, Prometheus, Grafana, and ELK.",
+          imgUrl: projImg3,
+          projectUrl: "https://github.com/abcdefya/binance-merchant-trade-flow",
+          liveUrl: "https://github.com/abcdefya/binance-merchant-trade-flow"
         }
       ],
-      experience: "AI Engineer Intern at NTQ Solution (Sep 2025 - Dec 2025): focused on OCR and exam-sheet automation with OpenCV and YOLOv8, achieving >98% confidence on key table detection tasks.",
-      education: "Hanoi University of Science and Technology - B.Sc. in Mathematics and Informatics (Expected 2025)."
+      experience: "AI Engineer at NTQ Solution, Hanoi, Vietnam (Jan 2025 - Dec 2025): built OCR preprocessing pipelines with OpenCV, integrated GPT-4o-mini structured post-processing, developed a teacher-facing RAG Q&A chatbot, fine-tuned YOLOv8 for multi-table exam detection with >98% confidence, and improved robustness across Vietnamese and Japanese exam formats with Albumentations.",
+      education: "Hanoi University of Science and Technology - B.Sc. in Mathematics and Informatics (2021 - 2025). Completed all degree requirements; graduation project awarded the highest rating by the Defense Committee."
     },
     vi: {
       title: "Dự Án Nổi Bật",
-      description: "Một số dự án tiêu biểu từ đồ án tốt nghiệp và các bài toán phần mềm hướng nghiên cứu.",
+      description: "Một số dự án AI, RAG và nền tảng dữ liệu cloud-native tiêu biểu trong CV mới nhất.",
       tabs: ["Dự Án Chính", "Kinh Nghiệm", "Học Vấn"],
       repoLabel: "Xem Repository",
-      liveLabel: "Xem Sản Phẩm",
+      liveLabel: "Mở Liên Kết",
       projects: [
         {
-          title: "Binance Merchant Trading Flow",
-          description: "Nền tảng dữ liệu cloud-native sử dụng Spark, Flink, Kafka, GKE và Terraform.",
+          title: "Huấn luyện viên nói tiếng Anh AI",
+          description: "AI tutor thời gian thực với Groq STT, LangGraph, ElevenLabs TTS, Azure speech assessment, FastAPI, PostgreSQL, Redis, MinIO, Elasticsearch, Docker và GKE.",
           imgUrl: projImg1,
-          projectUrl: "https://github.com/abcdefya/binance-merchant-trade-flow",
-          liveUrl: "https://github.com/abcdefya/binance-merchant-trade-flow"
-        },
-        {
-          title: "Chest Cancer Classification",
-          description: "Mô hình VGG16 transfer learning triển khai với Flask, Docker và AWS EC2.",
-          imgUrl: projImg2,
-          projectUrl: "https://github.com/abcdefya/Chest-Cancer-Classification",
-          liveUrl: "https://github.com/abcdefya/Chest-Cancer-Classification"
+          projectUrl: "https://github.com/abcdefya/LinguAI",
+          liveUrl: "https://github.com/abcdefya/LinguAI"
         },
         {
           title: "RAG Coding Assistant Chatbot",
-          description: "Trợ lý mã nguồn đa ngôn ngữ sử dụng LangChain + OpenAI + Neo4j + Qdrant.",
-          imgUrl: projImg3,
+          description: "Trợ lý lập trình dùng LangChain, OpenAI API, Neo4j, Qdrant, Ollama, hybrid retrieval và hỗ trợ debug đa ngôn ngữ.",
+          imgUrl: projImg2,
           projectUrl: "https://github.com/abcdefya",
           liveUrl: "https://github.com/abcdefya"
+        },
+        {
+          title: "Binance Merchant Trading Flow",
+          description: "Nền tảng dữ liệu cloud-native cho Binance C2C merchant với Spark ETL, PostgreSQL CDC, Debezium, Kafka, Flink, GKE, Terraform, Helm, Jenkins, Prometheus, Grafana và ELK.",
+          imgUrl: projImg3,
+          projectUrl: "https://github.com/abcdefya/binance-merchant-trade-flow",
+          liveUrl: "https://github.com/abcdefya/binance-merchant-trade-flow"
         }
       ],
-      experience: "Thực tập sinh AI Engineer tại NTQ Solution (09/2025 - 12/2025): tập trung vào OCR và tự động chấm bài bằng OpenCV và YOLOv8, đạt độ tin cậy >98% cho các bảng câu hỏi quan trọng.",
-      education: "Đại học Bách Khoa Hà Nội - Cử nhân Toán Tin (dự kiến 2025)."
+      experience: "AI Engineer tại NTQ Solution, Hà Nội, Việt Nam (01/2025 - 12/2025): xây dựng pipeline tiền xử lý OCR bằng OpenCV, tích hợp GPT-4o-mini để hậu xử lý có cấu trúc, phát triển chatbot Q&A dùng RAG cho giáo viên, fine-tune YOLOv8 để phát hiện nhiều bảng trong đề thi với độ tin cậy >98%, và tăng độ bền mô hình trên định dạng đề thi tiếng Việt và tiếng Nhật bằng Albumentations.",
+      education: "Đại học Bách khoa Hà Nội - Cử nhân Toán Tin (2021 - 2025). Đã hoàn thành toàn bộ yêu cầu chương trình; đồ án tốt nghiệp được Hội đồng bảo vệ đánh giá mức cao nhất."
     }
   };
 

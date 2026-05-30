@@ -4,53 +4,53 @@ export const Skills = ({ language }) => {
   const content = {
     en: {
       title: "Core Skills",
-      description: "A recruiter-friendly overview of my core capabilities, the tools I use, and the kinds of problems I can contribute to from day one.",
+      description: "A recruiter-friendly overview of the AI, backend, data, and MLOps capabilities I use to build production-ready intelligent systems.",
       groups: [
         {
-          title: "AI / ML Engineering",
-          summary: "Model training, experimentation, evaluation, and applied LLM workflows for practical products.",
-          tags: ["PyTorch", "TensorFlow/Keras", "Scikit-learn", "LangChain", "LangGraph", "Hugging Face"]
+          title: "LLM & Agentic AI",
+          summary: "Conversational AI, RAG, prompt systems, embeddings, structured outputs, and agent workflows for real user-facing products.",
+          tags: ["OpenAI API", "LangChain", "LangGraph", "RAG", "Prompt Engineering", "Qdrant", "Neo4j", "Hugging Face", "Ollama", "vLLM"]
         },
         {
-          title: "Computer Vision & OCR",
-          summary: "Image preprocessing, object detection, OCR pipelines, and document understanding for automation tasks.",
-          tags: ["OpenCV", "YOLOv8", "Pytesseract", "MediaPipe", "Albumentations", "OCR"]
+          title: "DL/ML, Vision & OCR",
+          summary: "Model training, evaluation, document understanding, OCR preprocessing, and detection pipelines for multilingual exam layouts.",
+          tags: ["PyTorch", "Scikit-learn", "Transformers", "YOLOv8", "OpenCV", "OCR", "Albumentations"]
         },
         {
-          title: "Data Engineering",
-          summary: "Batch and streaming data pipelines, ETL design, CDC workflows, and production-ready analytics platforms.",
-          tags: ["Airflow", "Spark", "Flink", "Kafka", "Debezium", "SQL"]
+          title: "Backend & Data Engineering",
+          summary: "API services, relational data models, batch and streaming pipelines, CDC workflows, and analytics-ready data platforms.",
+          tags: ["Python", "C++", "JavaScript", "FastAPI", "Flask", "PostgreSQL", "Docker", "Spark", "Kafka", "Airflow", "Debezium CDC"]
         },
         {
-          title: "Cloud, DevOps & MLOps",
-          summary: "Containerized deployment, cloud infrastructure, CI/CD, monitoring, and scalable ML system operations.",
-          tags: ["Docker", "Kubernetes", "Terraform", "GCP", "AWS", "Jenkins"]
+          title: "Cloud & MLOps",
+          summary: "Containerized deployments, Kubernetes operations, CI/CD, observability, and cloud infrastructure for AI systems.",
+          tags: ["GCP", "AWS", "Kubernetes", "Terraform", "Jenkins", "Rancher", "Prometheus", "Grafana", "GitLab", "ELK"]
         }
       ]
     },
     vi: {
       title: "Kỹ Năng Chính",
-      description: "Tổng quan theo hướng nhà tuyển dụng dễ đọc: tôi làm tốt mảng nào, dùng công nghệ gì, và có thể đóng góp vào dạng bài toán nào.",
+      description: "Tổng quan dành cho nhà tuyển dụng về năng lực AI, backend, data và MLOps mà mình dùng để xây dựng hệ thống thông minh sẵn sàng cho production.",
       groups: [
         {
-          title: "AI / ML Engineering",
-          summary: "Huấn luyện mô hình, thực nghiệm, đánh giá và xây dựng workflow LLM cho các bài toán thực tế.",
-          tags: ["PyTorch", "TensorFlow/Keras", "Scikit-learn", "LangChain", "LangGraph", "Hugging Face"]
+          title: "LLM & AI tác tử",
+          summary: "AI hội thoại, RAG, hệ thống prompt, embedding, output có cấu trúc và workflow agent cho sản phẩm phục vụ người dùng thật.",
+          tags: ["OpenAI API", "LangChain", "LangGraph", "RAG", "Prompt Engineering", "Qdrant", "Neo4j", "Hugging Face", "Ollama", "vLLM"]
         },
         {
-          title: "Computer Vision & OCR",
-          summary: "Tiền xử lý ảnh, object detection, pipeline OCR và hiểu tài liệu phục vụ tự động hóa.",
-          tags: ["OpenCV", "YOLOv8", "Pytesseract", "MediaPipe", "Albumentations", "OCR"]
+          title: "DL/ML, Vision & OCR",
+          summary: "Huấn luyện và đánh giá mô hình, hiểu tài liệu, tiền xử lý OCR và pipeline detection cho layout đề thi đa ngôn ngữ.",
+          tags: ["PyTorch", "Scikit-learn", "Transformers", "YOLOv8", "OpenCV", "OCR", "Albumentations"]
         },
         {
-          title: "Data Engineering",
-          summary: "Xây dựng pipeline batch và streaming, ETL, CDC và nền tảng dữ liệu sẵn sàng cho production.",
-          tags: ["Airflow", "Spark", "Flink", "Kafka", "Debezium", "SQL"]
+          title: "Backend & Data Engineering",
+          summary: "Dịch vụ API, mô hình dữ liệu quan hệ, pipeline batch và streaming, CDC workflow và nền tảng dữ liệu phục vụ analytics.",
+          tags: ["Python", "C++", "JavaScript", "FastAPI", "Flask", "PostgreSQL", "Docker", "Spark", "Kafka", "Airflow", "Debezium CDC"]
         },
         {
-          title: "Cloud, DevOps & MLOps",
-          summary: "Triển khai container, hạ tầng cloud, CI/CD, monitoring và vận hành hệ thống ML có thể mở rộng.",
-          tags: ["Docker", "Kubernetes", "Terraform", "GCP", "AWS", "Jenkins"]
+          title: "Cloud & MLOps",
+          summary: "Triển khai container, vận hành Kubernetes, CI/CD, observability và hạ tầng cloud cho hệ thống AI.",
+          tags: ["GCP", "AWS", "Kubernetes", "Terraform", "Jenkins", "Rancher", "Prometheus", "Grafana", "GitLab", "ELK"]
         }
       ]
     }

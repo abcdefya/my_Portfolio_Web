@@ -14,20 +14,20 @@ export const Banner = ({ language }) => {
     en: {
       tagline: "Welcome to my portfolio",
       title: "Hi! I'm Do The Anh",
-      rotate: ["AI/ML Engineer", "Computer Vision Engineer", "MLOps Enthusiast"],
-      summary: "Entry-level AI/ML Engineer with internship experience at NTQ Solution. I build computer vision, OCR, and RAG systems with hands-on deployment using cloud and MLOps tools.",
+      rotate: ["AIOps/MLOps Engineer", "AI Engineer", "RAG & Conversational AI Engineer"],
+      summary: "AIOps/MLOps Engineer with 1+ year of hands-on experience building conversational AI products, chatbots, and RAG pipelines for real users. I work across FastAPI, PostgreSQL, Docker, cloud infrastructure, and production AI deployment.",
       connect: "Let's Connect",
       projects: "View Projects",
-      stats: ["Internship at NTQ Solution", "3+ featured projects", "Focused on AI/ML deployment"]
+      stats: ["AI Engineer at NTQ Solution", "VinUni AI Talent participant", "Built end-to-end AI systems"]
     },
     vi: {
       tagline: "Chào mừng đến portfolio của tôi",
       title: "Xin chào! Mình là Đỗ Thế Anh",
-      rotate: ["Kỹ sư AI/ML", "Kỹ sư Computer Vision", "Người yêu thích MLOps"],
-      summary: "Tôi là kỹ sư AI/ML mới vào nghề, đã thực tập tại NTQ Solution. Tôi phát triển các hệ thống computer vision, OCR và RAG, đồng thời triển khai với cloud và công cụ MLOps.",
+      rotate: ["Kỹ sư AIOps/MLOps", "Kỹ sư AI", "Kỹ sư RAG & AI hội thoại"],
+      summary: "Kỹ sư AIOps/MLOps với hơn 1 năm kinh nghiệm thực chiến xây dựng sản phẩm AI hội thoại, chatbot và pipeline RAG cho người dùng thật. Mình làm việc với FastAPI, PostgreSQL, Docker, hạ tầng cloud và triển khai AI production.",
       connect: "Liên hệ",
       projects: "Xem dự án",
-      stats: ["Thực tập tại NTQ Solution", "3+ dự án nổi bật", "Tập trung AI/ML triển khai thực tế"]
+      stats: ["AI Engineer tại NTQ Solution", "Thành viên VinUni AI Talent", "Xây dựng hệ thống AI end-to-end"]
     }
   };
   const t = content[language];
