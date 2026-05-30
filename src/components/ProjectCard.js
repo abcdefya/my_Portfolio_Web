@@ -20,10 +20,10 @@ export const ProjectCard = ({
           <span>{description}</span>
         </div>
         <div className="proj-actions">
-          <a className="proj-btn" href={projectUrl} target="_blank" rel="noreferrer" aria-label={`Open repository for ${title}`}>
+          <a className="proj-btn" href={projectUrl} target="_blank" rel="noreferrer" aria-label={`${repoLabel} for ${title}`}>
             {repoLabel}
           </a>
-          <a className="proj-btn proj-btn-secondary" href={actualLiveUrl} target="_blank" rel="noreferrer" aria-label={`Open live demo for ${title}`}>
+          <a className="proj-btn proj-btn-secondary" href={actualLiveUrl} target="_blank" rel="noreferrer" aria-label={`${liveLabel} for ${title}`}>
             {liveLabel}
           </a>
         </div>
