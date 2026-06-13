@@ -51,19 +51,6 @@ export const Projects = ({ language }) => {
           liveUrl: "https://github.com/abcdefya/LinguAI",
         },
         {
-          title: "LLM-as-Judge Evaluation Platform",
-          role: "Full-Stack Developer · Personal Project · Mar 2026",
-          highlights: [
-            "Configurable judge pipeline routing responses through LLM evaluators with structured scoring.",
-            "React dashboard for uploading eval sets, triggering runs, and comparing model quality metrics.",
-            "Deployed on GKE with FastAPI backend, PostgreSQL, and Redis job queue.",
-          ],
-          stack: "LangChain, OpenAI API, FastAPI, PostgreSQL, Redis, React, GKE",
-          imgUrl: projImg3,
-          projectUrl: "https://github.com/abcdefya",
-          liveUrl: "https://github.com/abcdefya",
-        },
-        {
           title: "RAG Coding Assistant",
           role: "AI Engineer · TryFifty · Sep 2024 – Aug 2025",
           highlights: [
@@ -173,19 +160,6 @@ export const Projects = ({ language }) => {
           imgUrl: projImg1,
           projectUrl: "https://github.com/abcdefya/LinguAI",
           liveUrl: "https://github.com/abcdefya/LinguAI",
-        },
-        {
-          title: "Nền tảng đánh giá LLM-as-Judge",
-          role: "Lập trình viên Full-Stack · Dự án cá nhân · Tháng 3/2026",
-          highlights: [
-            "Pipeline judge với LLM evaluator cấu hình được và chấm điểm có cấu trúc.",
-            "Dashboard React tải bộ đánh giá, kích hoạt chạy và so sánh chỉ số mô hình.",
-            "Triển khai GKE với FastAPI, PostgreSQL và Redis.",
-          ],
-          stack: "LangChain, OpenAI API, FastAPI, PostgreSQL, Redis, React, GKE",
-          imgUrl: projImg3,
-          projectUrl: "https://github.com/abcdefya",
-          liveUrl: "https://github.com/abcdefya",
         },
         {
           title: "RAG Coding Assistant",
