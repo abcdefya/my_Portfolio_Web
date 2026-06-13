@@ -12,6 +12,7 @@
 /build
 /.worktrees
 /worktrees
+/personal-portfolio-showcase
 
 # misc
 .DS_Store
