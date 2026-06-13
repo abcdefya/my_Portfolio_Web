@@ -1,51 +1,32 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders the first featured project and advances one project at a time in English', () => {
+test('renders first page with LinguAI visible and prev disabled in English', () => {
   render(<App />);
-
   expect(screen.getByText(/LinguAI/i)).toBeInTheDocument();
-  expect(screen.getByRole('button', { name: /previous project/i })).toBeDisabled();
-  expect(screen.getByRole('button', { name: /next project/i })).toBeEnabled();
-
-  fireEvent.click(screen.getByRole('button', { name: /next project/i }));
-
-  expect(screen.getByText(/LLM-as-Judge Evaluation Platform/i)).toBeInTheDocument();
-  expect(screen.getByRole('button', { name: /previous project/i })).toBeEnabled();
+  expect(screen.getByRole('button', { name: /previous page/i })).toBeDisabled();
+  expect(screen.getByRole('button', { name: /next page/i })).toBeEnabled();
 });
 
-test('disables the next arrow on the last featured project in English', () => {
+test('next page shows Binance and disables next arrow in English', () => {
   render(<App />);
-
-  const nextButton = screen.getByRole('button', { name: /next project/i });
-
-  fireEvent.click(nextButton);
-  fireEvent.click(nextButton);
-  fireEvent.click(nextButton);
-
+  fireEvent.click(screen.getByRole('button', { name: /next page/i }));
   expect(screen.getByText(/Binance Merchant Trading Flow/i)).toBeInTheDocument();
-  expect(screen.getByRole('button', { name: /next project/i })).toBeDisabled();
+  expect(screen.getByRole('button', { name: /previous page/i })).toBeEnabled();
+  expect(screen.getByRole('button', { name: /next page/i })).toBeDisabled();
 });
 
-test('renders featured project navigation in Vietnamese', () => {
+test('resets to first page when language changes', () => {
   render(<App />);
-
+  fireEvent.click(screen.getByRole('button', { name: /next page/i }));
   fireEvent.click(screen.getByRole('button', { name: 'VI' }));
-
   expect(screen.getByText(/LinguAI/i)).toBeInTheDocument();
-  expect(screen.getByRole('button', { name: /dự án trước/i })).toBeDisabled();
-
-  fireEvent.click(screen.getByRole('button', { name: /dự án tiếp theo/i }));
-
-  expect(screen.getByText(/Nền tảng đánh giá LLM-as-Judge/i)).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /trang trước/i })).toBeDisabled();
 });
 
-test('resets to the first featured project when language changes', () => {
+test('renders Vietnamese pagination labels', () => {
   render(<App />);
-
-  fireEvent.click(screen.getByRole('button', { name: /next project/i }));
   fireEvent.click(screen.getByRole('button', { name: 'VI' }));
-
-  expect(screen.getByText(/LinguAI/i)).toBeInTheDocument();
-  expect(screen.getByRole('button', { name: /dự án trước/i })).toBeDisabled();
+  expect(screen.getByRole('button', { name: /trang trước/i })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: /trang tiếp theo/i })).toBeInTheDocument();
 });

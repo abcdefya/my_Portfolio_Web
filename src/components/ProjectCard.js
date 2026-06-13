@@ -1,7 +1,6 @@
 export const ProjectCard = ({
   title,
   role,
-  summary,
   highlights = [],
   stack,
   imgUrl,
@@ -15,34 +14,41 @@ export const ProjectCard = ({
   const actualLiveUrl = liveUrl || projectUrl;
 
   return (
-    <article className="featured-project-panel">
-      <div className="featured-project-media">
+    <article className="proj-card-grid">
+      <div className="proj-card-grid__img">
         <img src={imgUrl} alt={title} />
       </div>
-
-      <div className="featured-project-copy">
-        <p className="featured-project-role">{role}</p>
-        <h3>{title}</h3>
-        <p className="featured-project-summary">{summary}</p>
-
-        <div className="featured-project-meta">
+      <div className="proj-card-grid__body">
+        <p className="proj-card-grid__role">{role}</p>
+        <h3 className="proj-card-grid__title">{title}</h3>
+        <div className="proj-card-grid__highlights">
           <h4>{highlightsLabel}</h4>
           <ul>
-            {highlights.map((highlight, index) => (
+            {highlights.slice(0, 3).map((highlight, index) => (
               <li key={index}>{highlight}</li>
             ))}
           </ul>
         </div>
-
-        <p className="featured-project-stack">
+        <p className="proj-card-grid__stack">
           <span>{stackLabel}:</span> {stack}
         </p>
-
         <div className="proj-actions">
-          <a className="proj-btn" href={projectUrl} target="_blank" rel="noreferrer" aria-label={`${repoLabel} for ${title}`}>
+          <a
+            className="proj-btn"
+            href={projectUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${repoLabel} for ${title}`}
+          >
             {repoLabel}
           </a>
-          <a className="proj-btn proj-btn-secondary" href={actualLiveUrl} target="_blank" rel="noreferrer" aria-label={`${liveLabel} for ${title}`}>
+          <a
+            className="proj-btn proj-btn-secondary"
+            href={actualLiveUrl}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${liveLabel} for ${title}`}
+          >
             {liveLabel}
           </a>
         </div>
