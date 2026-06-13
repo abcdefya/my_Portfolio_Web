@@ -354,16 +354,22 @@ export const Projects = ({ language }) => {
                       <div className="experience-timeline">
                         {t.experience.map((entry, index) => (
                           <div className="experience-timeline__entry" key={index}>
-                            <div className="experience-timeline__dot" />
-                            <div className="experience-timeline__dates">{entry.dates}</div>
-                            <div className="experience-timeline__company">{entry.company}</div>
-                            <div className="experience-timeline__role">{entry.role}</div>
-                            <div className="experience-timeline__project">{entry.project}</div>
-                            <ul className="experience-timeline__highlights">
-                              {entry.highlights.map((h, hi) => (
-                                <li key={hi}>{h}</li>
-                              ))}
-                            </ul>
+                            <div className="experience-timeline__connector">
+                              <div className="experience-timeline__line" />
+                              <div className="experience-timeline__dot" />
+                              <div className="experience-timeline__line" />
+                            </div>
+                            <div className="experience-timeline__content">
+                              <div className="experience-timeline__dates">{entry.dates}</div>
+                              <div className="experience-timeline__company">{entry.company}</div>
+                              <div className="experience-timeline__role">{entry.role}</div>
+                              <div className="experience-timeline__project">{entry.project}</div>
+                              <ul className="experience-timeline__highlights">
+                                {entry.highlights.map((h, hi) => (
+                                  <li key={hi}>{h}</li>
+                                ))}
+                              </ul>
+                            </div>
                           </div>
                         ))}
                       </div>
