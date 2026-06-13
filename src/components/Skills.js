@@ -9,22 +9,22 @@ export const Skills = ({ language }) => {
         {
           title: "LLM & Agentic AI",
           summary: "Conversational AI, RAG, prompt systems, embeddings, structured outputs, and agent workflows for real user-facing products.",
-          tags: ["OpenAI API", "LangChain", "LangGraph", "RAG", "Prompt Engineering", "Qdrant", "Neo4j", "Hugging Face", "Ollama", "vLLM"]
+          tags: ["OpenAI API", "LangChain", "LangGraph", "Langfuse", "Langsmith", "RAG", "Prompt Engineering", "Embeddings", "Qdrant", "Neo4j", "Hugging Face", "Ollama"]
         },
         {
           title: "DL/ML, Vision & OCR",
           summary: "Model training, evaluation, document understanding, OCR preprocessing, and detection pipelines for multilingual exam layouts.",
-          tags: ["PyTorch", "Scikit-learn", "Transformers", "YOLOv8", "OpenCV", "OCR", "Albumentations"]
+          tags: ["PyTorch", "Scikit-learn", "OpenCV", "YOLO", "OCR"]
         },
         {
           title: "Backend & Data Engineering",
           summary: "API services, relational data models, batch and streaming pipelines, CDC workflows, and analytics-ready data platforms.",
-          tags: ["Python", "C++", "JavaScript", "FastAPI", "Flask", "PostgreSQL", "Docker", "Spark", "Kafka", "Airflow", "Debezium CDC"]
+          tags: ["Python", "C++", "JavaScript", "FastAPI", "Flask", "PostgreSQL", "Docker", "Apache Spark", "Apache Kafka", "Airflow", "Debezium CDC"]
         },
         {
           title: "Cloud & MLOps",
           summary: "Containerized deployments, Kubernetes operations, CI/CD, observability, and cloud infrastructure for AI systems.",
-          tags: ["GCP", "AWS", "Kubernetes", "Terraform", "Jenkins", "Rancher", "Prometheus", "Grafana", "GitLab", "ELK"]
+          tags: ["GCP", "AWS", "Kubernetes", "Terraform", "Jenkins", "Rancher", "Prometheus", "Grafana", "GitLab", "ELK", "MLflow"]
         }
       ]
     },
@@ -35,22 +35,22 @@ export const Skills = ({ language }) => {
         {
           title: "LLM & AI tác tử",
           summary: "AI hội thoại, RAG, hệ thống prompt, embedding, output có cấu trúc và workflow agent cho sản phẩm phục vụ người dùng thật.",
-          tags: ["OpenAI API", "LangChain", "LangGraph", "RAG", "Prompt Engineering", "Qdrant", "Neo4j", "Hugging Face", "Ollama", "vLLM"]
+          tags: ["OpenAI API", "LangChain", "LangGraph", "Langfuse", "Langsmith", "RAG", "Prompt Engineering", "Embeddings", "Qdrant", "Neo4j", "Hugging Face", "Ollama"]
         },
         {
           title: "DL/ML, Vision & OCR",
           summary: "Huấn luyện và đánh giá mô hình, hiểu tài liệu, tiền xử lý OCR và pipeline detection cho layout đề thi đa ngôn ngữ.",
-          tags: ["PyTorch", "Scikit-learn", "Transformers", "YOLOv8", "OpenCV", "OCR", "Albumentations"]
+          tags: ["PyTorch", "Scikit-learn", "OpenCV", "YOLO", "OCR"]
         },
         {
           title: "Backend & Data Engineering",
           summary: "Dịch vụ API, mô hình dữ liệu quan hệ, pipeline batch và streaming, CDC workflow và nền tảng dữ liệu phục vụ analytics.",
-          tags: ["Python", "C++", "JavaScript", "FastAPI", "Flask", "PostgreSQL", "Docker", "Spark", "Kafka", "Airflow", "Debezium CDC"]
+          tags: ["Python", "C++", "JavaScript", "FastAPI", "Flask", "PostgreSQL", "Docker", "Apache Spark", "Apache Kafka", "Airflow", "Debezium CDC"]
         },
         {
           title: "Cloud & MLOps",
           summary: "Triển khai container, vận hành Kubernetes, CI/CD, observability và hạ tầng cloud cho hệ thống AI.",
-          tags: ["GCP", "AWS", "Kubernetes", "Terraform", "Jenkins", "Rancher", "Prometheus", "Grafana", "GitLab", "ELK"]
+          tags: ["GCP", "AWS", "Kubernetes", "Terraform", "Jenkins", "Rancher", "Prometheus", "Grafana", "GitLab", "ELK", "MLflow"]
         }
       ]
     }

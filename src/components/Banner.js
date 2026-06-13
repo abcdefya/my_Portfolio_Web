@@ -15,19 +15,19 @@ export const Banner = ({ language }) => {
       tagline: "Welcome to my portfolio",
       title: "Hi! I'm Do The Anh",
       rotate: ["AIOps/MLOps Engineer", "AI Engineer", "RAG & Conversational AI Engineer"],
-      summary: "AIOps/MLOps Engineer with 1+ year of hands-on experience building conversational AI products, chatbots, and RAG pipelines for real users. I work across FastAPI, PostgreSQL, Docker, cloud infrastructure, and production AI deployment.",
+      summary: "AIOps/MLOps Engineer with hands-on experience building Agentic AI products, chatbots, and RAG pipelines for real users. Solid mathematical foundation and ML/DL algorithms. Self-driven—built and owned end-to-end AI systems from BE/FE design to production deployment. Selected participant in VinUni's AI Talent program.",
       connect: "Let's Connect",
       projects: "View Projects",
-      stats: ["AI Engineer at NTQ Solution", "VinUni AI Talent participant", "Built end-to-end AI systems"]
+      stats: ["AI Engineer Intern at VinSmartFuture", "VinUni AI Talent participant", "Built end-to-end AI systems"]
     },
     vi: {
       tagline: "Chào mừng đến portfolio của tôi",
       title: "Xin chào! Mình là Đỗ Thế Anh",
       rotate: ["Kỹ sư AIOps/MLOps", "Kỹ sư AI", "Kỹ sư RAG & AI hội thoại"],
-      summary: "Kỹ sư AIOps/MLOps với hơn 1 năm kinh nghiệm thực chiến xây dựng sản phẩm AI hội thoại, chatbot và pipeline RAG cho người dùng thật. Mình làm việc với FastAPI, PostgreSQL, Docker, hạ tầng cloud và triển khai AI production.",
+      summary: "Kỹ sư AIOps/MLOps với kinh nghiệm thực chiến xây dựng sản phẩm Agentic AI, chatbot và pipeline RAG cho người dùng thật. Nền tảng toán học và ML/DL vững chắc. Tự chủ—xây dựng và sở hữu toàn bộ hệ thống AI từ BE/FE đến deployment. Thành viên chương trình VinUni AI Talent.",
       connect: "Liên hệ",
       projects: "Xem dự án",
-      stats: ["AI Engineer tại NTQ Solution", "Thành viên VinUni AI Talent", "Xây dựng hệ thống AI end-to-end"]
+      stats: ["AI Engineer Intern tại VinSmartFuture", "Thành viên VinUni AI Talent", "Xây dựng hệ thống AI end-to-end"]
     }
   };
   const t = content[language];
